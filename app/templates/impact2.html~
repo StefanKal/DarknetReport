@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>Darknet Report</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.1.0/css/bootstrap-slider.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!-- link href="./static/css/starter-template.css" rel="stylesheet">
+        <!-- Custom CSS -->
+    <link href="./static/css/simple-sidebar.css" rel="stylesheet">
+ 	<link href="./static/css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="./static/js/jquery.min.js"></script>
+  	<script src="./static/js/darknet.js"></script>
+  </head>
+
+  <body>
+    <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">Darknet Report</a>
+            </li>
+            <li class="active"><a href="/">Dashboard</a></li>
+            <li><a href="/listings">Listings</a></li>
+            <li><a href="/timeseries">Time Series Analysis</a></li>
+            <li><a href="/impact">Impact Analysis</a></li>
+            <li><a href="/presentation">About me</a></li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+	<div id="page-content-wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+        		<h2>Predicting overdose reports based on drug supply</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" style="margin-top: 30px;">
+		<div class="col-lg-6">
+			<div class="jumbotron">
+				<form  action="/impact" method="GET">
+					<div class="form-group">
+						<div style="margin-top: 25px;">
+							<b>0%</b><input type="text" name="pF" data-provide="slider"
+									data-slider-min="0" data-slider-max="500" data-slider-step="10" data-slider-value={{ pF_str }} data-slider-tooltip="always"><b>500%</b>
+							<h4>Fentanyl HCl price</h4>
+						</div>
+						<div style="margin-top: 50px;">
+							<b>0%</b><input type="text" name="pCW" data-provide="slider"
+									data-slider-min="0" data-slider-max="500" data-slider-step="10" data-slider-value={{ pCW_str }} data-slider-tooltip="always"><b>500%</b>
+							<h4>China White price</h4>
+						</div>
+						<div style="margin-top: 50px;">
+							<b>0%</b><input type="text" name="numF" data-provide="slider"
+									data-slider-min="0" data-slider-max="200" data-slider-step="1" data-slider-value={{ numF_str }} data-slider-tooltip="always"><b>200%</b>
+							<h4>Fentanyl HCl number of listings</h4>
+						</div>
+						<div style="margin-top: 50px;">
+							<b>0%</b><input type="text" name="numCW" data-provide="slider" data-slider-min="0"
+									data-slider-max="200" data-slider-step="1" data-slider-value={{ numCW_str }} data-slider-tooltip="always"><b>200%</b>
+							<h4>China White number of listings</h4>
+						</div>
+							<div style="margin-top: 50px;">
+							<button type="submit" class="btn btn-default btn-lg" name="button" value="predict">Predict</button>
+							<button type="submit" class="btn btn-default btn-lg" name="button" value="findParams">Find Turnaround</button>
+							<button type="submit" class="btn btn-default btn-lg" name="button" value="reset">Reset</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="well">
+				<h3>Fentanyl overdose reports on <img src="./static/images/GoogleLogo.jpg" alt="Google" height="45"> News</h3>
+				<div>
+					<img class="imgcenter" src="/googleNewsTrend" id="GNTrendImg">
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="well">
+				<h2>Number of Overdose reports</h2>
+				<table> 
+				<tr>
+					<th>
+						<img src={{ imgPath }} id="arrowPredict" height="70" style="margin-right: 50px; margin-left: 50px;">
+					</th>
+					<th>
+						<h2>{{ probDown }}%</h2>
+						<p>probability for a decrease</p>
+					</th>
+				</tr> 
+				</table> 
+			</div>
+		</div>
+	</div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.1.0/bootstrap-slider.min.js"></script>
+
+  </div> <!-- /.container-->
+</div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./static/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./static/js/bootstrap.min.js"></script>
+  
+<script src="static/js/bootstrap.min.js"></script>
+
+</body></html>
