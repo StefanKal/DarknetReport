@@ -36,20 +36,20 @@
 	</style>
     <div id="wrapper">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">Darknet Report</a>
-            </li>
-            <li class="active"><a href="/">Dashboard</a></li>
-            <li><a href="/listings">Listings</a></li>
-            <li><a href="/timeseries">Time Series Analysis</a></li>
-            <li><a href="/impact">Impact Analysis</a></li>
-            <li><a href="#">About me</a></li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand">
+				<a href="/">Darknet Report</a>
+			</li>
+			<li class="active"><a href="/">Dashboard</a></li>
+			<li><a href="/listings">Listings</a></li>
+			<li><a href="/timeseries">Product Variants</a></li>
+			<li><a href="/impact">Impact Analysis</a></li>
+			<li><a href="/presentation">About me</a></li>
+		</ul>
+	</div>
+	<!-- /#sidebar-wrapper -->
 
 	<br><br>
     <div class="container">

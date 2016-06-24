@@ -20,6 +20,7 @@
         <!-- Custom CSS -->
     <link href="./static/css/simple-sidebar.css" rel="stylesheet">
  	<link href="./static/css/custom.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Orbitron:900" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -36,27 +37,41 @@
 	</style>
     <div id="wrapper">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">Darknet Report</a>
-            </li>
-            <li class="active"><a href="/">Dashboard</a></li>
-            <li><a href="/listings">Listings</a></li>
-            <li><a href="/timeseries">Time Series Analysis</a></li>
-            <li><a href="/impact">Impact Analysis</a></li>
-            <li><a href="/presentation">About me</a></li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
-<br><br>
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand">
+				<a href="/">Darknet Report</a>
+			</li>
+			<li class="active"><a href="/">Dashboard</a></li>
+			<li><a href="/listings">Listings</a></li>
+			<li><a href="/timeseries">Product Variants</a></li>
+			<li><a href="/impact">Impact Analysis</a></li>
+			<li><a href="/presentation">About me</a></li>
+		</ul>
+	</div>
+	<!-- /#sidebar-wrapper -->
+	
+	<br><br>
 
     <div class="container">
-
-	<img src="./static/images/darknet400x400.png" id="darknetLogo" alt="Darknet logo" height="700" width="700">
-
+	<div style="margin-top: 170px; margin-bottom: 170px; text-align: center;">
+		<h1><hDNet1>Darknet.report</hDNet1></h1>
+	</div>
+	<!--img src="./static/images/darknet400x400.png" id="darknetLogo" alt="Darknet logo" height="700" width="700">
     </div><!-- /.container -->
+
+    <!-- Footer -->
+    <footer id="bottom"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+		            <p class="text-muted">Copyright &copy; Stefan Kalchmair 2016</p>
+					<p class="text-muted"><a href="https://www.linkedin.com/in/stefankalchmair">LinkedIn</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- Bootstrap core JavaScript
@@ -68,4 +83,5 @@
   
 <script src="static/js/bootstrap.min.js"></script>
 
-</body></html>
+</body></html>  
+
