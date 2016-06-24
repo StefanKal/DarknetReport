@@ -85,19 +85,18 @@ def googleNewsTrendDiff():
 	dateVector = np.load('./app/model/Fentanyl_dateVector.npy')
 	dateVector = dateVector.astype(datetime)
 
-	yC = yClassified*np.nanstd(yDiff)*2+np.nanmean(yDiff)
-	avgWnd = 20 # data was smoothed witha moving average window of 20 width
+	yC = yClassified*np.nanstd(yDiff)*2.5
 	plt.close('all')
 	fig, ax = plt.subplots(1,figsize=(4, 2.5))
-	ax.plot(dateVector, yDiff/avgWnd, color='black')
-	ax.plot(dateVector,yC/avgWnd, color='red')
-	plt.ylabel('Change rate of News reports')
+	ax.plot(dateVector, yDiff, color='black', linewidth=1.0)
+	ax.plot(dateVector,yC, color='red', linewidth=2.0)
+	plt.ylabel('Change rate / week')
 	# rotate and align the tick labels so they look better
 	fig.autofmt_xdate()
 	# use a more precise date string for the x axis locations in the toolbar
 	ax.fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
-	xLim = ax.get_xlim()
-	ax.set_xlim(xLim[0], xLim[1]+50) # add some space on the right
+	yLim = ax.get_ylim()
+	ax.set_ylim(-yLim[1]*1.1, yLim[1]*1.1) # add some space on the right
 	#plt.title("""Google News reports on "Fentanyl overdose" """)
 	img = io.BytesIO()
 	fig.savefig(img,bbox_inches='tight')
