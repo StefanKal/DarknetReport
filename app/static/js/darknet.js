@@ -10,13 +10,6 @@ function complete() {
     });
 }
 
-function initAPVP() {
-	updateTSPlot();
-	// Instantiate a slider
-	var mySlider = $("input.slider").slider();
-
-}
-
 function updateTSPlot(){
 	currentQuery=$("massCutoff").val()
     $.ajax({
@@ -30,8 +23,8 @@ function updateTSPlot(){
 }
 
 function initTimeSeries() {
-	updateListings("China white");
-	updateAvgPrice("China white");
+	updateListings("Fentanyl HCl");
+	updateAvgPrice("Fentanyl HCl");
 }
 
 function updateListings(drugname){

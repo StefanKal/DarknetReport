@@ -55,8 +55,8 @@
 
 <div class="container">
       <div class="starter-template">
-        <h1>Darknet Buddy - Evolution marketplace</h1>
-        <p class="lead">These are evolution market listings from 2014 and 2015.</p>
+        <h1>Darknet.report raw data</h1>
+        <p class="lead">These are example listings scraped from Evolution marketplace in the years 2014 and 2015.</p>
       </div>
 
 
