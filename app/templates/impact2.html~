@@ -33,37 +33,44 @@
   <body>
     <div id="wrapper">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">Darknet Report</a>
-            </li>
-            <li class="active"><a href="/">Dashboard</a></li>
-            <li><a href="/listings">Listings</a></li>
-            <li><a href="/timeseries">Time Series Analysis</a></li>
-            <li><a href="/impact">Impact Analysis</a></li>
-            <li><a href="/presentation">About me</a></li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
+	<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand">
+				<a href="/">Darknet Report</a>
+			</li>
+			<li class="active"><a href="/">Dashboard</a></li>
+			<li><a href="/listings">Listings</a></li>
+			<li><a href="/timeseries">Product Variants</a></li>
+			<li><a href="/impact">Impact Analysis</a></li>
+			<li><a href="/presentation">About me</a></li>
+		</ul>
+	</div>
+	<!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
-	<div id="page-content-wrapper">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12">
-        		<h2>Predicting overdose reports based on drug supply</h2>
-			</div>
-		</div>
-	</div>
 
-	<div class="container" style="margin-top: 30px;">
-		<div class="col-lg-6">
-			<div class="jumbotron">
+
+	<div class="container">
+		<div class="col-lg-5">
+			<div class="well">
+				<h3>Number of Overdose reports</h3>
+				<p>in March 2015</p>
+				<table> 
+				<tr>
+					<th>
+						<img src={{ imgPath }} id="arrowPredict" height="70" style="margin-right: 50px; margin-left: 50px;">
+					</th>
+					<th>
+						<h2>{{ probDown }}%</h2>
+						<p>likely to decrease</p>
+					</th>
+				</tr> 
+				</table> 
+
 				<form  action="/impact" method="GET">
 					<div class="form-group">
-						<div style="margin-top: 25px;">
+						<div style="margin-top: 75px;">
 							<b>0%</b><input type="text" name="pF" data-provide="slider"
 									data-slider-min="0" data-slider-max="500" data-slider-step="10" data-slider-value={{ pF_str }} data-slider-tooltip="always"><b>500%</b>
 							<h4>Fentanyl HCl price</h4>
@@ -103,17 +110,7 @@
 		<div class="col-lg-6">
 			<div class="well">
 				<h2>Number of Overdose reports</h2>
-				<table> 
-				<tr>
-					<th>
-						<img src={{ imgPath }} id="arrowPredict" height="70" style="margin-right: 50px; margin-left: 50px;">
-					</th>
-					<th>
-						<h2>{{ probDown }}%</h2>
-						<p>probability for a decrease</p>
-					</th>
-				</tr> 
-				</table> 
+				<p>This app allows modifying supply and price of the most important products responsible for Fentanyl overdosing reports. A Random Forest Classifier was built to identify the substances with highest impact on overdosing reports. The News report trend is calculated only for March 2015. "Find Turnaround" will calculate price/supply parameters that would lead to a downward trend in March 2015.</p>
 			</div>
 		</div>
 	</div>
